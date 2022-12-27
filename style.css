@@ -1,0 +1,458 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--clr-light: #232931;
+	--clr-dark: #393E46;
+	--clr-accent: hsl(160, 55%, 55%);
+	--clr-white: #EEEEEE;
+}
+
+body {
+	font-family: copperplate;
+	background: var(--clr-light);
+	color: var(--clr-white);
+}
+
+.home,
+.about,
+.work,
+.footer {
+	text-align: center;
+}
+
+h1 {
+	font-size: 2.65rem;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 2.35rem;
+	margin-bottom: .5rem;
+	font-weight: bold;
+}
+
+p {
+	font-size: 1.45rem;
+	font-family: poppins;
+	margin: 0 auto;
+	opacity: 0.8;
+}
+
+.logo {
+	color: var(--clr-white);
+	font-weight: bold;
+}
+
+
+/* Header */
+
+	header {
+		width: 100%;
+		background: var(--clr-dark);
+	}
+
+	.navbar {
+		top: 0;
+		z-index: 1000;
+		width: 100%;
+		max-width: 1500px;
+		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		background: var(--clr-dark);
+		padding: 25px 35px;
+	}
+
+	.list {
+		display: flex;
+		list-style: none;
+		gap: 40px;
+	}
+
+	.navbar a {
+		text-decoration: none;
+		color: var(--clr-white);
+	}
+
+	#toggler,
+	.navbar label {
+		display: none;
+	}
+
+	nav a {
+   		position: relative;
+ 	}
+ 
+  	nav a:after {
+		 content: '';
+		 display: block;
+		 position: absolute;
+		 left: 0;
+		 right: 0;
+		 bottom: -8px;
+		 height: 3px;
+		 background: var(--clr-accent);
+		 transform: scale(0, 1);
+		 transition: transform ease-in-out 250ms;
+ 	}
+  
+ 	nav a:hover::after {
+   	 	transform: scale(1,1);
+  	}
+
+/* Nav Mobile */
+
+	@media (max-width: 900px) {
+		.menu {
+			width: 100%;
+			max-height: 0;
+			overflow: hidden;
+		}
+
+		.list {
+			flex-direction: column;
+			align-items: center;
+			gap: 50px;
+			margin-top: 40px;
+			margin-bottom: 20px;
+		}
+
+		.navbar label {
+			display: inline-flex;
+			align-items: center;
+			cursor: pointer;
+		}
+
+		#toggler:checked ~ .menu {
+			max-height: 100%;
+		}
+
+		.fa-bars {
+			background: var(--clr-light);
+		}
+	}
+
+
+
+/* Home section */
+
+	.home {
+		width: 70%;
+		margin: 2rem auto 0;
+	}
+
+	.image_1 {
+		border-radius: 50%;
+		width: 25rem;
+		max-width: 100%;
+		border: 5px solid var(--clr-accent);
+		margin: 2rem auto;
+		display: block;
+		
+	}
+
+	.name-header {
+		color: var(--clr-orange);
+	}
+
+	.home_ul {
+		display: flex;
+		list-style: none;
+		width: 300px;
+		margin: 2.25rem auto 1rem;
+		justify-content: space-evenly;
+	}
+
+
+	.fa-home {
+		font-size: 2.45rem;
+		color: var(--clr-accent);
+		transition: smooth, 0.5s;
+	}
+
+	.fa-home:hover {
+		transform: translateY(10px);
+		color: var(--clr-white);
+	}
+
+
+/* About Section */
+
+	.about {
+		width: 90%;
+		max-width: 900px;
+		margin: 4rem auto;
+		padding-top: 4rem;
+		border-top: 2px solid hsl(160, 55%, 55%, 0.1);
+	}
+
+	.image2 {
+		display: block;
+		width: 100%;
+		max-width: 20rem;
+		object-fit: cover;
+		border: 5px solid var(--clr-accent);
+	}
+
+	.flex-group {
+		display: flex;
+		margin-top: 3rem;
+		gap: 2.5rem;
+		text-align: left;
+	}
+
+	@media (max-width: 750px) {
+		.flex-group {
+			flex-direction: column;
+		}
+
+		.image2 {
+			margin: 0 auto;
+		}
+	}
+
+/* Work Section */
+
+	.work {
+		width: 100%;
+		margin: 2rem auto 0;
+	}
+
+	.work h1 {
+		font-size: 4rem;
+	}
+
+	.work h1::after {
+		content: '';
+		display: block;
+		margin: 0 auto 1rem;	
+		background: var(--clr-accent);
+		height: 7px;
+		width: 300px;
+	}
+
+	.portfolio {
+		display: grid;
+		margin: 2.25rem auto 0;
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	}
+
+	.portfolio__item {
+		overflow: hidden;
+	}
+
+	.portfolio__img {
+		display: block;
+		max-width: 100%;
+		transition: ease-in-out 0.7s;
+	}
+
+	.portfolio__img:hover {
+		transform: scale(1.2);
+	}
+
+/* Footer */
+
+	footer {
+		text-align: center;
+		background: var(--clr-dark);
+		padding: 1.25rem 0;
+	}
+
+	.footer_ul {
+		display: flex;
+		list-style: none;
+		width: 200px;
+		margin: 1.25rem auto;
+		justify-content: space-evenly;
+	}
+
+	.fa-footer {
+		font-size: 1rem;
+		color: var(--clr-white);
+	}
+
+	.footer-header {
+		font-size: 1.5rem;
+	}
+
+	.footer-color {
+		color: var(--clr-white);
+	}
+
+	.footer-font-size {
+		font-size: 1rem;
+	}
+
+/* Resume */
+
+	.resume-body {
+		background: var(--clr-light);
+	}
+
+	.resume {
+		margin: 3rem auto;
+		display: flex;
+		width: 90%;
+		max-width: 1200px;
+	}
+
+	.side-bar-content {
+		display: flex;
+		align-items: center;
+		padding-left: 1rem;
+		margin: 1rem 0;
+	}
+
+	.profile-picture {
+		width: 15rem;
+		border-radius: 50%;
+		display: flex;
+		margin: 1rem auto;
+		border: 4px solid var(--clr-white);
+	}
+
+	.left-content {
+		padding: 0 1rem;	
+	}
+
+	.h5-left {
+		font-size: 1.2rem;
+	}
+
+	.resume-paragraph-left {
+		text-align: left;
+		font-size: 1rem;
+		margin: 0 .75rem;
+	}
+
+	.side-bar {
+		color: white;
+		background: var(--clr-accent);
+		padding: 0 1rem;
+	}
+
+	.main-content {
+		background: var(--clr-dark);
+		padding: 2rem;
+		width:;
+	}
+
+	.h1-resume {
+		font-size: 2.25rem;
+		font-weight: 800;
+		text-transform: uppercase;
+	}
+
+	.h1-resume::after {
+		content: '';
+		display: block;
+		width: 15.4rem;
+		height: 5px;
+		margin: .2rem 0 1rem;
+		background: var(--clr-accent);
+	}
+
+	.h2-resume {
+		font-size: 1.45rem;
+		font-style: italic;
+	}
+
+	.h3-resume {
+		font-size: 1.2rem;
+		border-bottom: 1px solid hsl(160, 55%, 55%, 0.3);
+		padding-bottom: .5rem;
+		margin: 1rem 0;
+	}
+
+	.h4-resume {
+		font-size: 1rem;
+		font-style: italic;
+	}
+
+	.experience {
+		margin: .5rem 0;
+	}
+
+	.paragraph-resume {
+		width: 90%;
+		font-size: 1rem;
+		margin: 0 0 .5rem;
+	}
+
+	.right-content {
+		margin-top: 1rem;
+	}
+
+	.h3-resume-mobile,
+	.p-resume-mobile {
+			display: none;
+	}
+
+	.title-section {
+		margin-bottom: 2rem;
+	}
+
+	.job-title-section {
+		margin: 1rem 0;
+	}
+
+
+	@media (max-width: 920px){
+		.resume {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.h1-resume,
+		.h2-resume,
+		.h1-resume::after {
+			display: none;
+		}
+
+		.h3-resume-mobile,
+		.p-resume-mobile {
+			display: block;
+			text-align: center;
+			margin-bottom: .5rem;
+			
+		}
+
+		.h3-resume-mobile {
+			font-size: 1.3rem;
+		}
+
+		.p-resume-mobile {
+			font-size: 1rem;
+			margin-bottom: 1.5rem;
+			width: 75%;
+		}
+
+		.h3-resume-mobile::after {
+			content: '';
+			display: block;
+			width: 8rem;
+			height: 2px;
+			background: var(--clr-dark);
+			margin: 0 auto;
+			opacity: 50%;
+		}
+
+	}
+
+
+
+
+
+
+
+
+
+
+
