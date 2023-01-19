@@ -12,7 +12,6 @@
 }
 
 body {
-	font-family: copperplate, sans-serif, serif;
 	background: var(--clr-light);
 	color: var(--clr-white);
 }
@@ -28,6 +27,7 @@ h1 {
 	/*font-size: 2.65rem;*/
 	font-size: clamp(2.5rem, 3vw, 3.5rem); 
 	font-weight: bold;
+	font-family: copperplate, serif;
 }
 
 h2 {
@@ -87,6 +87,7 @@ h6 {
 	}
 
 	.navbar a {
+		font-family: copperplate, serif;
 		text-decoration: none;
 		color: var(--clr-white);
 	}
@@ -246,10 +247,10 @@ h6 {
 	.work h1::after {
 		content: '';
 		display: block;
-		margin: 0 auto 1rem;	
+		margin: 0 auto .75rem;	
 		background: var(--clr-accent);
-		height: 7px;
-		max-width: 300px;
+		height: 2px;
+		max-width: 400px;
 	}
 
 	.portfolio {
@@ -358,14 +359,13 @@ h6 {
 
 	.side-bar {
 		color: white;
-		background: var(--clr-accent);
+		background: hsl(160, 55%, 55%, .75);
 		padding: 0 1rem;
 	}
 
 	.main-content {
 		background: var(--clr-dark);
 		padding: 2rem;
-		width:;
 	}
 
 	.h1-resume {
