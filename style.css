@@ -250,7 +250,12 @@ h6 {
 		margin: 0 auto .75rem;	
 		background: var(--clr-accent);
 		height: 2px;
-		max-width: 400px;
+		width: 80%;
+		max-width: 350px;
+	}
+
+	.work p {
+		padding: 0 1rem;
 	}
 
 	.portfolio {
@@ -463,8 +468,8 @@ h6 {
 			display: block;
 			width: 8rem;
 			height: 2px;
-			background: var(--clr-dark);
-			margin: 0 auto;
+			background: var(--clr-light);
+			margin: 0.5rem auto;
 			opacity: 50%;
 		}
 
